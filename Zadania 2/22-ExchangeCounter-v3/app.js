@@ -93,5 +93,5 @@ class ExchangeCounter extends React.Component {
      );
   }
 }
- 
+
 ReactDOM.render(<ExchangeCounter/>, document.getElementById("root"));

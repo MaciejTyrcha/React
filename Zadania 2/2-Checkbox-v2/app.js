@@ -7,17 +7,17 @@ const NegativeMessage = () =>
 class TicketShop extends React.Component {
   state = {
     isConfirmed: false,
-    isFormValidated: false,
+    isFormSubmited: false,
   }
   handleCheckBoxChange = () => {
     this.setState({
       isConfirmed: !this.state.isConfirmed,
-      isFormValidated: false,
+      isFormSubmited: false,
     })
   }
 
   displayMessage = () => {
-    if(this.state.isFormValidated) {
+    if(this.state.isFormSubmited) {
       if(this.state.isConfirmed){
         return <PositiveMessage/>
       }
@@ -25,29 +25,27 @@ class TicketShop extends React.Component {
         return <NegativeMessage/>
       }
     }
-    else {
-      return null;
-    }
+    else return null
   }
 
-  handleFormSubmit = (e) => {
-    e.preventDefault();
-    if(!this.state.isFormValidated) {
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    if(!this.state.isFormSubmited) {
       this.setState({
-        isFormValidated: true,
-      })
+        isFormSubmited: !this.state.isFormSubmited
+      });
     }
   }
-
   render() {
     return(
+      // htmlFor oznacza opis do którego elemntu się to odnosi
       <>
         <h1>Kup bilet na horror roku</h1>
         <form onSubmit = {this.handleFormSubmit}>
           <input type="checkbox" id="age" onChange = {this.handleCheckBoxChange} checked = {this.state.isConfirmed}/>
           <label htmlFor="age">Mam co najmniej 16 lat</label>
-          <br />
-          <button type="submit">Kup bilet</button>
+          <br/>
+          <button type = "submit">Kup bilet</button>
         </form>
         {this.displayMessage()}
       </>

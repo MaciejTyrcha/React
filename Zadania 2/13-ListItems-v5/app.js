@@ -66,6 +66,7 @@ class ListItems extends React.Component {
   render() {
     return (
       <>
+bind powoduje mi że funkcja się nie wykona od razu. Plus przekazujemy argument
         <button onClick = {this.handleUsersFilter.bind(this, "all")}>Wszyscy</button>
         <button onClick = {this.handleUsersFilter.bind(this, "female")}>Kobiety</button>
         <button onClick = {this.handleUsersFilter.bind(this, "male")}>Mężczyźni</button>

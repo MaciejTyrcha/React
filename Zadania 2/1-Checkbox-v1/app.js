@@ -26,6 +26,7 @@ class CheckBoxAgeConfirmation extends React.Component {
   }
   render() {
     return(
+      // htmlFor oznacza opis do którego elemntu się to odnosi
       <>
         <h1>Kup bilet na horror roku</h1>
         <input type="checkbox" id="age" onChange = {this.handleCheckBoxChange} checked = {this.state.isConfirmed}/>

@@ -70,5 +70,5 @@ class TicketShop extends React.Component {
     )
   }
 }
-
+ 
 ReactDOM.render(<TicketShop/>, document.getElementById("root"));
